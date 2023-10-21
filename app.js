@@ -23,7 +23,6 @@ app.use(cors({
 }));
 
 // app.use((req, res, next) => {
-  
 //   next();
 // });
 

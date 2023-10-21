@@ -4,8 +4,8 @@ import Hotel from "../models/Hotel.js";
 const router = Router();
 
 router.get("/hotels", async (req, res) => {
-  res.append('Access-Control-Allow-Origin', ['*']);
-  res.append('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, PATCH, OPTIONS');
+  res.setHeader('Access-Control-Allow-Origin', ['*']);
+  res.setHeader('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, PATCH, OPTIONS');
   const Hotels = await Hotel.find();
   console.log(Hotels);
   res.send(Hotels);
