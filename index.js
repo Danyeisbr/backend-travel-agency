@@ -1,11 +1,9 @@
-import cors from "cors";
 import app from './app.js';
 import { startConnection } from './database.js';
-
 import { config } from "dotenv";
 config();
 
-app.use(cors());
+
 startConnection();
 // app.listen(process.env.PORT || 4000, () => {
 //   console.log('Server is running on port: ' + process.env.PORT);
