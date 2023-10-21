@@ -9,15 +9,19 @@ import resendEmail from "./routes/resendEmail.js";
 import authRoutes from "./routes/authRoutes.js";
 
 const app = express();
+app.use(cors());
+// const corsOptions = {
+//   origin: "https://front-travel-agency.azurewebsites.net",
+//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//   credentials: true, // Enable cookies in the CORS requests
+//   optionsSuccessStatus: 204, // Some browsers return 204
+// };
+// app.use(function (request, response, next) {
+//   response.header("Access-Control-Allow-Origin", "*");
+//   response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   next();
+// });
 
-const corsOptions = {
-    origin: 'https://front-travel-agency.azurewebsites.net',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true, // Enable cookies in the CORS requests
-    optionsSuccessStatus: 204 // Some browsers return 204
-  };
-
-app.use(cors(corsOptions));
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(cookieParser());
