@@ -1,5 +1,0 @@
-nodeProcessCommandLine: "D:\\home\\site\\wwwroot\\node\\14.15.4\\x64\\node.exe"
-nodeProcessCountPerApplication: 0
-maxConcurrentRequestsPerProcess: 1024
-maxNamedPipeConnectionRetry: 3
-namedPipeConnectionRetryDelay: 2000ms
