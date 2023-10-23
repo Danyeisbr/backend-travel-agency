@@ -59,6 +59,9 @@ const reservationSchema = new Schema(
     reservationActive: {
       type: Boolean,
     },
+    totalPriceReservation: {
+      type: String,
+    },
   },
   {
     versionKey: false,

@@ -31,8 +31,8 @@ router.post("/email", async (req, res) => {
         Lodging City: ${reservationData.lodgingCity}
         Hotel Name: ${reservationData.hotelNameReservation}
         Room Number: ${reservationData.roomNumberReservation}
-        Reservation Active: ${reservationData.reservationActive}
         Guests: ${additionalGuestNames.join(", ")}
+        Total Price Reservation: ${reservationData.totalPriceReservation}
       `;
 
     // Add line breaks between each data

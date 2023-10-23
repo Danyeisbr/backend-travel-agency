@@ -27,6 +27,7 @@ router.post("/reservations", async (req, res) => {
     roomNumberReservation,
     reservationActive,
     guests,
+    totalPriceReservation,
   } = req.body;
   const createReservation = new Reservation({
     documentType,
@@ -45,6 +46,7 @@ router.post("/reservations", async (req, res) => {
     roomNumberReservation,
     reservationActive,
     guests,
+    totalPriceReservation,
   });
   console.log(createReservation);
   await createReservation.save();
@@ -62,7 +64,9 @@ router.get("/reservations/:id", async (req, res) => {
 
 router.delete("/reservations/:id", async (req, res) => {
   try {
-    const deleteReservation = await Reservation.findByIdAndDelete(req.params.id);
+    const deleteReservation = await Reservation.findByIdAndDelete(
+      req.params.id
+    );
     return res.json(deleteReservation);
   } catch (error) {
     return res.status(500).send(error);
@@ -70,9 +74,13 @@ router.delete("/reservations/:id", async (req, res) => {
 });
 
 router.put("/reservations/:id", async (req, res) => {
-  const updateReservation = await Reservation.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-  });
+  const updateReservation = await Reservation.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    {
+      new: true,
+    }
+  );
   res.send(updateReservation);
 });
 
