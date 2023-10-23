@@ -60,7 +60,7 @@ const reservationSchema = new Schema(
       type: Boolean,
     },
     totalPriceReservation: {
-      type: String,
+      type: Number,
     },
   },
   {
